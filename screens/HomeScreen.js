@@ -13,7 +13,7 @@ const config = {
 }
 
 export default class HomeScreen extends React.Component {
-  onSwipeDown () {
+  onSwipeDown = (e) => {
     this.props.navigation.navigate('Scan')
   }
 
@@ -22,7 +22,7 @@ export default class HomeScreen extends React.Component {
       <GestureRecognizer
         style={styles.container}
         config={config}
-        onSwipeDown={(state) => this.onSwipeDown(state)}
+        onSwipeDown={this.onSwipeDown}
       >
         <Image
           style={styles.logo}

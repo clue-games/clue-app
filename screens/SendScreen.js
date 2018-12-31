@@ -6,6 +6,7 @@ import {
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { OldText } from '../components/StyledText'
+import { FormInput } from '../components/Input'
 import { PrimaryButton } from '../components/Button'
 
 export default class SendScreen extends React.Component {
@@ -27,12 +28,19 @@ export default class SendScreen extends React.Component {
           <OldText style={styles.headerText}>SEND</OldText>
         </View>
         <View>
-          <OldText style={styles.clueText}>
-            some cryptic message..
-          </OldText>
-          <PrimaryButton>
-            CLAIM CLUE
-          </PrimaryButton>
+          <FormInput
+            label='TOKEN'
+          />
+          <FormInput
+            label='TO'
+          />
+          <FormInput
+            label='AMOUNT'
+          />
+          <FormInput
+            label='DESCRIPTION (OPTIONAL)'
+          />
+          <PrimaryButton style={styles.sendButton}>SEND</PrimaryButton>
         </View>
       </View>
     )
@@ -59,5 +67,8 @@ const styles = StyleSheet.create({
   clueText: {
     fontSize: 18,
     marginBottom: 35
+  },
+  sendButton: {
+    marginTop: 25
   }
 })
