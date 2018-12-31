@@ -8,16 +8,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { OldText } from '../components/StyledText'
 import { PrimaryButton } from '../components/Button'
 
-export default class DetailScreen extends React.Component {
-  constructor (props) {
-    super(props)
-    const { navigation } = props
-    const clue = navigation.getParam('clue', {})
-    this.state = {
-      clue
-    }
-  }
-
+export default class ReceiveScreen extends React.Component {
   onBackPress = (e) => {
     this.props.navigation.goBack()
   }
@@ -33,7 +24,7 @@ export default class DetailScreen extends React.Component {
               style={styles.backArrow}
             />
           </TouchableOpacity>
-          <OldText style={styles.headerText}>{this.state.clue.name}</OldText>
+          <OldText style={styles.headerText}>RECEIVE</OldText>
         </View>
         <View>
           <OldText style={styles.clueText}>

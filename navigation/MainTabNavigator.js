@@ -7,6 +7,9 @@ import ScanScreen from '../screens/ScanScreen'
 import CluesScreen from '../screens/CluesScreen'
 import DetailScreen from '../screens/DetailScreen'
 import WalletScreen from '../screens/WalletScreen'
+import SendScreen from '../screens/SendScreen'
+import ReceiveScreen from '../screens/ReceiveScreen'
+import TransactionScreen from '../screens/TransactionScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
@@ -40,7 +43,10 @@ CluesStack.navigationOptions = {
 }
 
 const WalletStack = createStackNavigator({
-  Wallet: WalletScreen
+  Wallet: WalletScreen,
+  Send: SendScreen,
+  Receive: ReceiveScreen,
+  Transactions: TransactionScreen
 }, {
   headerMode: 'none'
 })

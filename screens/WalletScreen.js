@@ -1,11 +1,24 @@
 import React from 'react'
 import {
   StyleSheet,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native'
 import { OldText } from '../components/StyledText'
 
 export default class WalletScreen extends React.Component {
+  onSendPress = (e) => {
+    this.props.navigation.navigate('Send')
+  }
+
+  onReceivePress = (e) => {
+    this.props.navigation.navigate('Receive')
+  }
+
+  onTransactionsPress = (e) => {
+    this.props.navigation.navigate('Transactions')
+  }
+
   render () {
     return (
       <View style={styles.container}>
@@ -13,15 +26,24 @@ export default class WalletScreen extends React.Component {
           <OldText style={styles.headerText}>YOUR WALLET</OldText>
           <OldText style={styles.headerText}>336.00 TRX</OldText>
         </View>
-        <View style={styles.walletButton}>
+        <TouchableOpacity
+          style={styles.walletButton}
+          onPress={this.onSendPress}
+        >
           <OldText style={styles.walletButtonText}>Send</OldText>
-        </View>
-        <View style={styles.walletButton}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.walletButton}
+          onPress={this.onReceivePress}
+        >
           <OldText style={styles.walletButtonText}>Receive</OldText>
-        </View>
-        <View style={styles.walletButton}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.walletButton}
+          onPress={this.onTransactionsPress}
+        >
           <OldText style={styles.walletButtonText}>Transactions</OldText>
-        </View>
+        </TouchableOpacity>
       </View>
     )
   }
