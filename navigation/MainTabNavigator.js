@@ -3,6 +3,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 
 import TabBarIcon from '../components/TabBarIcon'
 import HomeScreen from '../screens/HomeScreen'
+import ScanScreen from '../screens/ScanScreen'
 import CluesScreen from '../screens/CluesScreen'
 import WalletScreen from '../screens/WalletScreen'
 
@@ -51,7 +52,7 @@ WalletStack.navigationOptions = {
   )
 }
 
-export default createBottomTabNavigator({
+const TabNavigator = createBottomTabNavigator({
   HomeStack,
   CluesStack,
   WalletStack
@@ -70,4 +71,12 @@ export default createBottomTabNavigator({
       shadowOpacity: 1
     }
   }
+})
+
+export default createStackNavigator({
+  TabNavigator: TabNavigator,
+  Scan: ScanScreen
+}, {
+  headerMode: 'none',
+  mode: 'modal'
 })

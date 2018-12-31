@@ -1,29 +1,42 @@
 import React from 'react'
 import {
   StyleSheet,
-  View,
   Image
 } from 'react-native'
+import GestureRecognizer from 'react-native-swipe-gestures'
 import { Ionicons } from '@expo/vector-icons'
 import { OldText } from '../components/StyledText'
 
+const config = {
+  velocityThreshold: 0.3,
+  directionalOffsetThreshold: 80
+}
+
 export default class HomeScreen extends React.Component {
+  onSwipeDown () {
+    this.props.navigation.navigate('Scan')
+  }
+
   render () {
     return (
-      <View style={styles.container}>
+      <GestureRecognizer
+        style={styles.container}
+        config={config}
+        onSwipeDown={(state) => this.onSwipeDown(state)}
+      >
         <Image
           style={styles.logo}
           source={require('../assets/images/clueLogo.png')}
         />
         <OldText style={styles.centerText}>
-          Something hidden deep within, unlock a CLUE to begin.
+          Something hidden deep within,{'\n'} unlock a CLUE to begin.
         </OldText>
         <Ionicons
           name='ios-arrow-down'
           size={42}
           style={styles.bottomArrow}
         />
-      </View>
+      </GestureRecognizer>
     )
   }
 }
