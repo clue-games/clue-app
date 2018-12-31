@@ -8,6 +8,8 @@ import WalletScreen from '../screens/WalletScreen'
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen
+}, {
+  headerMode: 'none'
 })
 
 HomeStack.navigationOptions = {
@@ -21,6 +23,8 @@ HomeStack.navigationOptions = {
 
 const CluesStack = createStackNavigator({
   Clues: CluesScreen
+}, {
+  headerMode: 'none'
 })
 
 CluesStack.navigationOptions = {
@@ -34,6 +38,8 @@ CluesStack.navigationOptions = {
 
 const WalletStack = createStackNavigator({
   Wallet: WalletScreen
+}, {
+  headerMode: 'none'
 })
 
 WalletStack.navigationOptions = {

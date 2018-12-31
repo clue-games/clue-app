@@ -21,11 +21,9 @@ export default class App extends React.Component {
         require('./assets/images/clueLogoSignup.png')
       ]),
       Font.loadAsync({
-        // This is the font that we are using for our tab bar
         ...Icon.Ionicons.font,
-        // We include SpaceMono because we use it in HomeScreen.js. Feel free
-        // to remove this if you are not using it in your app
-        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf')
+        'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        'iowan-old': require('./assets/fonts/IowanOldSt_OSF_BT_Bold.ttf')
       })
     ])
   }
