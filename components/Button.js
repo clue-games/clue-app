@@ -4,7 +4,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 export class PrimaryButton extends React.Component {
   render () {
     return (
-      <TouchableOpacity style={[this.props.style, styles.button]}>
+      <TouchableOpacity style={[this.props.style, styles.button, this.props.disabled && styles.disabled]}>
         <Text {...this.props} style={[styles.buttonText]} />
       </TouchableOpacity>
     )
@@ -24,5 +24,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#ffffff',
     margin: 10
+  },
+  disabled: {
+    opacity: 0.5
   }
 })

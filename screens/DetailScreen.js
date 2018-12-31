@@ -22,6 +22,12 @@ export default class DetailScreen extends React.Component {
     this.props.navigation.goBack()
   }
 
+  onClaimPress = (e) => {
+    if (!this.state.clue.claimed) {
+      console.log('claim')
+    }
+  }
+
   render () {
     return (
       <View style={styles.container}>
@@ -33,14 +39,12 @@ export default class DetailScreen extends React.Component {
               style={styles.backArrow}
             />
           </TouchableOpacity>
-          <OldText style={styles.headerText}>{this.state.clue.name}</OldText>
+          <OldText style={styles.headerText}>{this.state.clue.label}</OldText>
         </View>
         <View>
-          <OldText style={styles.clueText}>
-            some cryptic message..
-          </OldText>
-          <PrimaryButton>
-            CLAIM CLUE
+          <OldText style={styles.clueText}>{this.state.clue.message}</OldText>
+          <PrimaryButton onPress={this.onClaimPress} disabled={this.state.clue.claimed}>
+            {this.state.clue.claimed ? 'CLUE CLAIMED' : 'CLAIM CLUE'}
           </PrimaryButton>
         </View>
       </View>

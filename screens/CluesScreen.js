@@ -9,13 +9,16 @@ import { OldText } from '../components/StyledText'
 
 const clues = [
   {
-    name: 'Deus Modus',
-    status: 'Unclaimed',
-    reward: '100 TRX'
+    label: 'Deus Modus',
+    message: 'Some cryptic message...',
+    claimed: false,
+    reward: 644
   },
   {
-    name: 'Cicada 3301',
-    status: 'Claimed by XYZ'
+    label: 'Cicada 3301',
+    message: 'Some cryptic message...',
+    claimed: true,
+    reward: 0
   }
 ]
 
@@ -24,11 +27,16 @@ export default class CluesScreen extends React.Component {
     this.props.navigation.navigate('Detail', { clue })
   }
 
+  getClueText (clue) {
+    const status = clue.claimed ? 'Claimed' : 'Unclaimed'
+    return `${status}${clue.reward > 0 ? ' / ' + clue.reward + ' TRX' : ''}`
+  }
+
   renderRow = ({ item }) => {
     return (
       <TouchableOpacity onPress={this.onCluePress(item)} style={styles.clueContainer}>
-        <OldText style={styles.clueText}>{item.name}</OldText>
-        <OldText style={styles.clueText}>{item.status}{item.reward && ' / ' + item.reward}</OldText>
+        <OldText style={styles.clueText}>{item.label}</OldText>
+        <OldText style={styles.clueText}>{this.getClueText(item)}</OldText>
       </TouchableOpacity>
     )
   }
@@ -40,7 +48,7 @@ export default class CluesScreen extends React.Component {
         <FlatList
           data={clues}
           renderItem={this.renderRow}
-          keyExtractor={clue => clue.name}
+          keyExtractor={clue => clue.label}
         />
       </View>
     )
