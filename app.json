@@ -12,8 +12,8 @@
     "orientation": "portrait",
     "icon": "./assets/images/clueLogoSignup.png",
     "splash": {
-      "image": "./assets/images/clueLogoSignup.png",
-      "resizeMode": "center",
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -24,6 +24,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }

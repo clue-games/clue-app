@@ -2,7 +2,8 @@ import React from 'react'
 import {
   StyleSheet,
   View,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from 'react-native'
 import { OldText } from '../components/StyledText'
 
@@ -14,18 +15,21 @@ const clues = [
   },
   {
     name: 'Cicada 3301',
-    status: 'Unclaimed',
-    reward: '666 TRX'
+    status: 'Claimed by XYZ'
   }
 ]
 
 export default class CluesScreen extends React.Component {
-  renderRow ({ item }) {
+  onCluePress = (clue) => (e) => {
+    this.props.navigation.navigate('Detail', { clue })
+  }
+
+  renderRow = ({ item }) => {
     return (
-      <View style={styles.clueContainer}>
+      <TouchableOpacity onPress={this.onCluePress(item)} style={styles.clueContainer}>
         <OldText style={styles.clueText}>{item.name}</OldText>
-        <OldText style={styles.clueText}>{item.status} / {item.reward}</OldText>
-      </View>
+        <OldText style={styles.clueText}>{item.status}{item.reward && ' / ' + item.reward}</OldText>
+      </TouchableOpacity>
     )
   }
 

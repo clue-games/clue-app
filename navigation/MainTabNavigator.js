@@ -5,6 +5,7 @@ import TabBarIcon from '../components/TabBarIcon'
 import HomeScreen from '../screens/HomeScreen'
 import ScanScreen from '../screens/ScanScreen'
 import CluesScreen from '../screens/CluesScreen'
+import DetailScreen from '../screens/DetailScreen'
 import WalletScreen from '../screens/WalletScreen'
 
 const HomeStack = createStackNavigator({
@@ -23,7 +24,8 @@ HomeStack.navigationOptions = {
 }
 
 const CluesStack = createStackNavigator({
-  Clues: CluesScreen
+  Clues: CluesScreen,
+  Detail: DetailScreen
 }, {
   headerMode: 'none'
 })
