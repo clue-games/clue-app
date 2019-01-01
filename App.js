@@ -1,7 +1,13 @@
 import React from 'react'
+import { PersistGate } from 'redux-persist/integration/react'
 import { Platform, StatusBar, StyleSheet, View } from 'react-native'
 import { AppLoading, Asset, Font, Icon } from 'expo'
+import { Provider } from 'react-redux'
+import './ReactotronConfig'
 import AppNavigator from './navigation/AppNavigator'
+import configureStore from './redux'
+
+const { store, persistor } = configureStore()
 
 export default class App extends React.Component {
   constructor (props) {
@@ -49,10 +55,14 @@ export default class App extends React.Component {
       )
     } else {
       return (
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
-          <AppNavigator />
-        </View>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <View style={styles.container}>
+              {Platform.OS === 'ios' && <StatusBar barStyle='default' />}
+              <AppNavigator />
+            </View>
+          </PersistGate>
+        </Provider>
       )
     }
   }

@@ -1,10 +1,14 @@
 import React from 'react'
 import { createSwitchNavigator } from 'react-navigation'
 
+import ActivationLoadingScreen from '../screens/ActivationLoadingScreen'
+import ActivationNavigator from './ActivationNavigator'
 import MainTabNavigator from './MainTabNavigator'
 
 export default createSwitchNavigator({
-  // You could add another route here for authentication.
-  // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+  Loading: ActivationLoadingScreen,
+  Activation: ActivationNavigator,
   Main: MainTabNavigator
+}, {
+  initialRouteName: 'Loading'
 })
