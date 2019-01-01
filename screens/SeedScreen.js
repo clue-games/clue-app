@@ -30,8 +30,12 @@ export default class SeedScreen extends React.Component {
           </TouchableOpacity>
           <OldText style={styles.headerText}>YOUR PASSWORD</OldText>
         </View>
-        <View>
-          <OldText style={styles.clueText}>wallet seed goes here</OldText>
+        <View style={styles.body}>
+          <View style={styles.seedContainer}>
+            <OldText style={styles.seedText}>
+              GLASS MATTER HOUR FORMER ECO NORDIC MYTHOS LUNAR TOOL WINDOW GLOBAL ARC SECRET
+            </OldText>
+          </View>
           <PrimaryButton onPress={this.onConfirmPress}>
             I'VE WRITTEN IT DOWN
           </PrimaryButton>
@@ -58,8 +62,18 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24
   },
-  clueText: {
+  body: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  seedContainer: {
+    backgroundColor: '#000',
+    marginBottom: 35,
+    padding: 10
+  },
+  seedText: {
     fontSize: 18,
-    marginBottom: 35
+    textAlign: 'center',
+    color: '#fff'
   }
 })
