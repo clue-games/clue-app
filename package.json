@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
+    "axios": "^0.18.0",
     "expo": "^31.0.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
@@ -19,7 +20,8 @@
     "react-navigation": "^2.18.2",
     "react-redux": "^6.0.0",
     "redux-persist": "^5.10.0",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "tronweb": "^2.1.20"
   },
   "standard": {
     "parser": "babel-eslint"
