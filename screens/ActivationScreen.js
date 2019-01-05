@@ -4,10 +4,13 @@ import {
   Image,
   View
 } from 'react-native'
+import { connect } from 'react-redux'
+import { createWallet } from '../redux/actions/user'
 import { PrimaryButton } from '../components/Button'
 
-export default class ActivationScreen extends React.Component {
+class ActivationScreen extends React.Component {
   onGetStartedPress = (e) => {
+    this.props.createWallet()
     this.props.navigation.navigate('Seed')
   }
 
@@ -43,3 +46,8 @@ const styles = StyleSheet.create({
     width: '100%'
   }
 })
+
+export default connect(
+  state => ({}),
+  { createWallet }
+)(ActivationScreen)

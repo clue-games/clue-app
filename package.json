@@ -21,7 +21,7 @@
     "react-redux": "^6.0.0",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.2",
-    "tronweb": "^2.1.20"
+    "tronweb": "git+https://github.com/clue-games/tron-web.git"
   },
   "standard": {
     "parser": "babel-eslint"
