@@ -1,4 +1,7 @@
 # CLUE DApp (iOS and Android)
+
+![](concept.gif)
+
 In order to increase adoption and lower the barrier of entry, CLUE DApp will focus on optimizing the user experience for first-time users.
 
 ### DApp-specific Wallet
