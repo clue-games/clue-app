@@ -2,6 +2,7 @@
   "expo": {
     "name": "clue-app",
     "slug": "clue-app",
+    "description": "CLUE is a fun and exciting way for brands to offer exclusive prizes and game rewards for fans that find, unlock and solve hidden CLUEs.",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": [
